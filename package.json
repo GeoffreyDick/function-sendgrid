@@ -1,0 +1,12 @@
+{
+  "name": "function-sendgrid",
+  "version": "1.0.0",
+  "description": "Serverless function to send email via SendGrid",
+  "main": "sendgrid.js",
+  "repository": "git@github.com:GeoffreyDick/function-sendgrid.git",
+  "author": "Geoff <git@geoffdick.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@sendgrid/mail": "^7.4.2"
+  }
+}
