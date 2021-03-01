@@ -16,7 +16,15 @@ exports.handler = async (event, _, callback) => {
     }
 
     await sgMail.send(data)
-    return callback(null, { statusCode: 200, body: 'Message sent!' })
+    return callback(null, {
+      statusCode: 200,
+      body: 'Message sent!',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Access-Control-Allow-Methods': 'POST, OPTION',
+      },
+    })
   } catch (err) {
     return errorGen(err.toString())
   }
