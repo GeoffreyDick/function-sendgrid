@@ -15,6 +15,9 @@ exports.handler = async (event, _, callback) => {
       return errorGen('No data provided')
     }
 
+    // Add template_id to data
+    data.template_id = process.env.SG_CONTACT_FORM_TEMPLATE_ID
+
     await sgMail.send(data)
     return callback(null, {
       statusCode: 200,
